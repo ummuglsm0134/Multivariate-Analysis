@@ -1,2 +1,16 @@
 # Multivariate-Analysis
-Mean,Correlation.Covariance, PCA
+#Mean,Correlation.Covariance
+options nocenter ls=80 ps=50 nodate nonumber;
+
+data Application;
+infile "/home/u59165872/application.mult/Application.dat";
+input ID FL APP AA LA SC LC HON SMS EXP DRV AMB GSP POT KJ SUIT;
+run;
+proc princomp data=Application OUT=PCSCORES COVariance;
+VAR FL--SUIT;
+run;
+
+proc print data=PCSCORES;
+VAR ID PRIN1-PRIN3;
+Title 'Values of the first 3 PC Scores';
+RUN;
