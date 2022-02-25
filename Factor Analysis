@@ -1,3 +1,4 @@
+#the primary question in factor analysis is whether the data are consistent with a prescribed structure
 #open this:
 #file:///C:/Users/ummug/Downloads/Program%201-results.html
 
@@ -16,3 +17,4 @@ energy .01   .85   .11  .79 1.00
 proc factor data=marketing method=prin res nfact=2 scree rotate=varimax;
    var taste money flavor snack energy;
 run
+   
